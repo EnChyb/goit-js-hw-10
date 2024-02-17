@@ -72,4 +72,3 @@ function catDescription(catData) {
   loader.classList.add('hidden');
 }
 
-//loader się kręci ciągle, zrobić error i kolorowanki
