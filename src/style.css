@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: url(./background.jpg);
+    font-family: "Protest Riot", sans-serif;
+}
+
+/* div with cat card*/
+.content {
+display: flex;
+align-items: center;
+flex-direction: column;
+
+}
+
+.cat-name {
+padding: 40px 40px;
+
+}
+
+.cat-img {
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 10px #b08e69bf;
+
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #decbb7bf;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.text {
+    padding: 30px 20px 20px;
+    font-size: 18px;
+    letter-spacing: .2px;
+
+}
+
+/*---loader---*/
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
+}
