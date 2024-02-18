@@ -6,13 +6,11 @@ import 'slim-select/dist/slimselect.css';
 const selectList = document.querySelector(".breed-select");
 const catInfo = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
-const errorApi = document.querySelector('.error')
 
 const slimSelect = new SlimSelect({
   select: ".breed-select",
 });
 
-errorApi.classList.add('hidden');
 
 
 try {
@@ -20,7 +18,6 @@ try {
   fetchBreeds().then(data => breedSelect(data));
 } catch (error) {
   Notiflix.Notify.failure('Fetching error:', error);
-  errorApi.classList.remove('hidden');
   loader.classList.add('hidden');
   console.log(error);
 }
@@ -44,8 +41,9 @@ selectList.addEventListener("change", async (e) => {
   fetchCatByBreed(e.target.value)
     .then(data => catDescription(data[0]))
     .catch (error => {
-    Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!', error);
-    errorApi.classList.remove('hidden');
+      Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!', error);
+      catInfo.innerHTML =``;
+  ;
     loader.classList.add('hidden');
     console.log(error);
   })
