@@ -18,6 +18,7 @@ try {
   fetchBreeds().then(data => breedSelect(data));
 } catch (error) {
   Notiflix.Notify.failure('Fetching error:', error);
+  catInfo.innerHTML =``;
   loader.classList.add('hidden');
   console.log(error);
 }
